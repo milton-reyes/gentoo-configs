@@ -1,0 +1,38 @@
+# See the manpage fstab(5) for more information.
+
+# <fs>                                          <mountpoint>    <type>          <opts>          <dump/pass>
+PARTUUID=<PARTUUID_NUMBER>                      /               ext4    defaults,discard,noatime        0 1
+#PARTUUID=<PARTUUID_NUMBER>                     /boot           ext2    defaults,noatime                0 2
+#PARTUUID=<PARTUUID_NUMBER>                     /boot           ext2    defaults,noatime                0 2
+#PARTUUID=<PARTUUID_NUMBER>                     /boot/esp       vfat    defaults,noatime                0 2
+PARTUUID=<PARTUUID_NUMBER>                      /boot/esp       vfat    defaults,noatime                0 2
+#PARTUUID=<PARTUUID_NUMBER>                     /lfs            ext4    discard,noatime                 0 2
+#PARTUUID=<PARTUUID_NUMBER>                     /chroots        ext4    discard,noatime                 0 2
+#PARTUUID=<PARTUUID_NUMBER>                     /ubuntu16       ext4    discard,noatime                 0 2
+#PARTUUID=<PARTUUID_NUMBER>                     /mint           ext4    discard,noatime                 0 2
+#PARTUUID=<PARTUUID_NUMBER>                     /bkboot         ext2    noauto,noatime                  0 2
+#PARTUUID=<PARTUUID_NUMBER>                     none            swap    sw                              0 0
+
+tmpfs   /tmp                    tmpfs   rw,nosuid,noatime,nodev,size=22G,mode=1777              0 0
+tmpfs   /run                    tmpfs   rw,nosuid,noatime,nodev,mode=1777               0 0
+tmpfs   /var/lock               tmpfs   rw,nosuid,noatime,nodev,mode=1777               0 0
+tmpfs   /var/tmp/portage        tmpfs   size=22G,uid=portage,gid=portage,mode=775,noatime       0 0
+
+PARTUUID=<PARTUUID_NUMBER>            /media/extmp    ntfs    defaults,noauto,user                    0 0
+UUID=<UUID_NUMBER>                  /media/sdcard   vfat    defaults,noauto,user                    0 0
+# secondary ssd
+PARTUUID=<PARTUUID_NUMBER>                      /media/ssd      ext4    rw,user                 0 2
+
+
+
+# EXTERNAL MEDIA
+#/dev/sdb1: UUID="<UUID_NUMBER>" TYPE="ntfs" PARTUUID="<PARTUUID_NUMBER>"
+
+# 8GB SD Card
+#/dev/sda1: UUID="<UUID_NUMBER>" TYPE="vfat"
+# some ssd
+#/dev/sda1: UUID="<UUID_NUMBER>" TYPE="ext4" PARTUUID="<PARTUUID_NUMBER>"
+#16GB silver pendrive
+UUID=<UUID_NUMBER> /media/16gpendrive vfat defaults,noauto,user 0 0
+UUID=<UUID_NUMBER> /media/64gblue ntfs defaults,noauto,user 0 0
+UUID=<UUID_NUMBER> /media/64gblue vfat defaults,noauto,user 0 0
