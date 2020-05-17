@@ -1,0 +1,204 @@
+##### WARNING ONLY USE THIS IF YOU KNOW WHAT YOU ARE DOING #####
+############# LOTS OF SETTINGS ARE SYSTEM SPECIFIC #############
+# --------------------------------------------------------------
+# RXVT UNICODE
+x11-terms/rxvt-unicode unicode3 256-color blink fading-colors iso14755 pixbuf xft
+# WPA SUPPLICANT
+net-wireless/wpa_supplicant qt5
+# APACHE
+#www-servers/apache threads # comment this if using php
+# DJANGO
+dev-python/django sqlite
+# PHP
+dev-lang/php fpm
+dev-lang/php apache2 gd
+app-eselect/eselect-php apache2
+# PULSEAUDIO
+media-sound/pulseaudio jack equalizer realtime X alsa alsa-plugin asyncns bluetooth caps dbus equalizer gdbm glib gnome gtk ipv6 jack orc realtime ssl tcpd udev webrtc-aec lirc zeroconf
+# package.use# required by sys-kernel/genkernel-3.5.3.3::gentoo
+# required by genkernel (argument)
+# FFMPEG
+media-video/ffmpeg X alsa bzip2 encode gpl hardcoded-tables iconv mp3 network opengl postproc pulseaudio sdl threads truetype vorbis x264 xcb xvid zlib amr amrenc bluray bs2b cdio chromaprint chromium -cpudetection doc fdk flite fontconfig frei0r fribidi gcrypt gme gmp gnutls gsm iec61883 ieee1394 jack jpeg2k kvazaar ladspa libass libcaca libilbc librtmp libsoxr libv4l lzma modplug -nvenc openal openh264 openssl opus oss pic rubberband -samba schroedinger snappy sofalizer speex ssh static-libs theora twolame v4l -vaapi -vdpau vpx wavpack webp x265 zeromq zimg zvbi
+virtual/ffmpeg X encode mp3 sdl truetype -vdpau x264 -gsm -jpeg2k -libav -opus -speex -theora threads -vaapi
+# MPLAYER
+media-video/mplayer X a52 alsa cdio dts dvd dvdnav enca encode gif iconv ipv6 jpeg libass mad mng mp3 network opengl osdmenu png pulseaudio sdl shm truetype unicode vorbis x264 xscreensaver xv xvid xvmc aalib bidi bl bluray bs2b cddb cdparanoia -cpudetection dga doc dv dvb faac faad fbcon ftp ggi gsm jack joystick ladspa libcaca libmpeg2 lirc live lzo md5sum nas nut openal oss pnm pvr radio rar rtc rtmp -samba speex tga theora toolame tremor twolame v4l vcd -vdpau xinerama yuv4mpeg zoran
+media-plugins/alsa-plugins jack
+# OBS-STUDIO
+media-video/obs-studio -nvenc imagemagick v4l
+# NVIDIA
+#x11-drivers/nvidia-drivers -kms uvm compat tools
+media-libs/mesa classic dri3 egl gallium gbm gles2 llvm nptl gles1 openmax osmesa pic unwind valgrind -vulkan -xvmc -xa -vdpau -vaapi -d3d9 #enable these if video_cards=nouveau: d3d9 xvmc xa vdpau vaapi
+x11-apps/mesa-progs egl gles2
+x11-libs/libva -vdpau
+# BLUEFISH
+app-editors/bluefish gtk3 nls spell gucharmap python
+gnome-extra/gucharmap introspection vala
+# IPTABLES
+net-firewall/iptables ipv6 conntrack netlink nftables pcap
+# XORG-Server
+x11-base/xorg-server glamor xephyr xnest kdrive suid
+# WEBSERVER
+www-servers/nginx NGINX_MODULES_HTTP: gzip fastcgi
+# GIMP
+media-libs/gegl cairo ffmpeg jpeg png sdl svg jpeg2k
+media-gfx/gimp alsa bzip2 dbus exif jpeg lcms mng pdf png python svg tiff udev aalib curl jpeg2k postscript smp wmf xpm
+# LIBREOFFICE
+app-office/libreoffice-l10n l10n_en l10n_es
+app-office/libreoffice -bluetooth -branding cups dbus gtk -eds gstreamer gtk2 java pdfimport
+# INTEL
+x11-drivers/xf86-video-intel dri3 tools
+# AUDACITY
+media-sound/audacity alsa ffmpeg flac jack ladspa lame lv2 mad midi nls portmixer soundtouch vorbis vst -doc id3tag -libav -sbsms twolame -vamp
+media-plugins/calf  gtk jack lash lv2 -static-libs
+media-sound/fluidsynth alsa dbus ipv6 jack readline -debug -examples ladspa lash -portaudio pulseaudio -sndfile
+# CONKY
+app-admin/conky -ipv6
+# NTFS
+sys-fs/ntfs3g acl external-fuse ntfsprogs xattr ntfsdecrypt suid
+# DOLPHIN EMU
+# required by games-emulation/dolphin-5.0::gentoo[sdl]
+# required by games-emulation/dolphin (argument)
+>=media-libs/libsdl2-2.0.8-r2 haptic
+games-emulation/dolphin alsa bluetooth evdev ffmpeg pch sdl wxwidgets ao lto openal portaudio profile upnp
+# NES
+games-emulation/nestopia gui
+games-emulation/fceux logo
+# SNES
+games-emulation/snes9x alsa gtk multilib nls opengl png xv joystick netplay -oss portaudio pulseaudio wayland xinerama
+games-emulation/higan alsa icarus opengl sdl udev xv ao openal -oss pulseaudio
+# MTPFS
+gnome-base/gvfs cdda fuse gtk http mtp policykit udev udisks -afp archive -bluray -elogind -gnome-keyring -gnome-online-accounts -google -gphoto2 -ios -nfs -samba -systemd -test -zeroconf
+# MUPEN
+games-emulation/mupen64plus-core -gles2 osd -debugger -lirc
+# WAYLAND
+dev-libs/weston X dbus drm gles2 jpeg launch lcms resize-optimization suid colord editor examples fbdev -headless -ivi -rdp -screen-sharing -static-libs -systemd -test -unwind wayland-compositor -webp -xwayland
+dev-libs/sway X filecaps swaybar swaybg swaylock tray -elogind -fish-completion -systemd wallpapers -zsh-completion
+# CINNAMON
+media-libs/clutter -wayland
+media-libs/cogl -wayland
+# FIREFOX
+www-client/firefox bindist
+
+#########################################################################
+# SYSTEMD
+# required by kde-plasma/plasma-workspace-5.13.5-r1::gentoo[systemd]
+# required by kde-plasma/powerdevil-5.13.5::gentoo
+# required by @selected
+# required by @world (argument)
+#>=sys-apps/dbus-1.10.24 user-session
+# systemd
+#net-wireless/bluez user-session
+########################################################################
+#>=dev-libs/openssl-1.0.2r bindist
+dev-libs/openssl -bindist
+net-misc/openssh -bindist
+net-wireless/wpa_supplicant -bindist
+dev-qt/qtnetwork -bindist
+########################################################################
+dev-lang/python sqlite
+sys-apps/util-linux static-libs
+sys-libs/zlib minizip
+app-crypt/pinentry gnome-keyring
+dev-libs/libxml2 icu
+media-libs/harfbuzz icu
+media-libs/mlt frei0r kdenlive melt
+sci-libs/fftw threads
+dev-libs/apr-util openssl
+dev-lang/php mysqli
+virtual/libintl abi_x86_32 abi_x86_64
+virtual/libiconv abi_x86_32
+dev-libs/libpthread-stubs abi_x86_32
+dev-libs/libffi abi_x86_32
+virtual/libffi abi_x86_32
+virtual/pkgconfig abi_x86_32
+sys-libs/zlib abi_x86_32
+dev-libs/expat abi_x86_32
+x11-libs/libXau abi_x86_32
+x11-libs/libXdmcp abi_x86_32
+dev-libs/libpcre abi_x86_32
+dev-libs/wayland abi_x86_32
+x11-base/xcb-proto abi_x86_32
+x11-libs/libxcb abi_x86_32
+x11-libs/libX11 abi_x86_32
+sys-apps/attr abi_x86_32
+sys-apps/util-linux abi_x86_32
+dev-libs/glib abi_x86_32
+dev-util/pkgconfig abi_x86_32
+app-emulation/virtualbox java
+sys-boot/grub mount
+kde-apps/kdenlive v4l
+# required by www-client/chromium-74.0.3729.169::gentoo
+# required by @selected
+# required by @world (argument)
+>=net-libs/nodejs-8.12.0 inspector icu
+# required by sys-power/suspend-1.0_p20150810-r1::gentoo[crypt]
+# required by sys-power/suspend (argument)
+>=dev-libs/libgcrypt-1.8.3 static-libs
+# required by sys-power/suspend-1.0_p20150810-r1::gentoo[crypt]
+# required by sys-power/suspend (argument)
+>=dev-libs/libgpg-error-1.36 static-libs
+# required by sys-power/suspend-1.0_p20150810-r1::gentoo[lzo]
+# required by sys-power/suspend (argument)
+>=dev-libs/lzo-2.10 static-libs
+# required by dde-extra/deepin-terminal-3.2.7::deepin
+# required by dde-base/dde-meta-15.10.1::deepin[terminal]
+# required by dde-base/dde-meta (argument)
+>=x11-libs/vte-0.54.4 vala
+# required by dde-base/dde-api-3.18.4.1::deepin
+# required by dde-base/dde-control-center-4.10.12::deepin
+# required by dde-base/dde-meta-15.10.1::deepin
+# required by dde-base/dde-meta (argument)
+>=media-libs/libcanberra-0.30-r5 pulseaudio
+# required by media-sound/pulseaudio-12.2-r1::gentoo[alsa-plugin,alsa]
+# required by media-video/deepin-movie-reborn-3.2.24::deepin
+# required by dde-base/dde-file-manager-4.8.6.4::deepin
+# required by dde-base/dde-meta-15.10.1::deepin
+# required by dde-base/dde-meta (argument)
+>=media-plugins/alsa-plugins-1.1.8 pulseaudio
+# required by dde-base/dtkwidget-2.0.14::deepin
+# required by dde-base/dde-control-center-4.10.12::deepin
+# required by dde-base/dde-meta-15.10.1::deepin
+# required by dde-base/dde-meta (argument)
+>=dev-qt/qtmultimedia-5.12.3 widgets
+# required by media-video/deepin-movie-reborn-3.2.24::deepin
+# required by dde-base/dde-file-manager-4.8.6.4::deepin
+# required by dde-base/dde-meta-15.10.1::deepin
+# required by dde-base/dde-meta (argument)
+>=media-video/mpv-0.27.2 libmpv
+# required by media-libs/mlt-6.16.0-r1::gentoo[ffmpeg,-libav]
+# required by kde-apps/kdenlive-19.04.3::gentoo
+# required by @selected
+# required by @world (argument)
+>=media-video/ffmpeg-4.1.3 -flite
+# required by media-libs/clutter-gtk-1.8.4::gentoo
+# required by gnome-extra/sushi-3.30.0::gentoo
+# required by gnome-base/nautilus-3.30.5-r1::gentoo[previewer]
+# required by app-text/evince-3.30.2::gentoo[nautilus]
+# required by @selected
+# required by @world (argument)
+>=media-libs/clutter-1.26.2-r1 wayland
+# required by media-libs/clutter-1.26.2-r1::gentoo
+# required by media-libs/clutter-gtk-1.8.4::gentoo
+# required by gnome-extra/sushi-3.30.0::gentoo
+# required by gnome-base/nautilus-3.30.5-r1::gentoo[previewer]
+# required by app-text/evince-3.30.2::gentoo[nautilus]
+# required by @selected
+# required by @world (argument)
+>=media-libs/cogl-1.22.5-r1 wayland
+# required by www-client/firefox-68.1.0::gentoo[system-libvpx]
+# required by @selected
+# required by @world (argument)
+>=media-libs/libvpx-1.7.0 postproc
+# required by www-client/firefox-68.1.0::gentoo[system-sqlite]
+# required by @selected
+# required by @world (argument)
+>=dev-db/sqlite-3.28.0 secure-delete
+# required by app-cdr/xfburn-0.5.5-r2::gentoo
+# required by @selected
+# required by @world (argument)
+>=xfce-base/exo-0.12.8 gtk2
+app-editors/vim -X
+# required by app-misc/neofetch-6.0.0::gentoo[X]
+# required by neofetch (argument)
+>=www-client/w3m-0.5.3_p20180125 imlib
+net-misc/curl threads
