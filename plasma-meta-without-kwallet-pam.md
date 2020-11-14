@@ -11,3 +11,5 @@ You could also install the meta package without flags
 or
 
 `USE="-sddm -kwallet -browser-integration -display-manager" emerge -av kde-plasma/plasma-meta`
+
+
