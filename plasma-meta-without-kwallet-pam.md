@@ -6,10 +6,12 @@ kde-plasma/breeze kde-plasma/drkonqi kde-plasma/kactivitymanagerd kde-plasma/kde
 
 You could also install the meta package without flags
 
-`echo "kde-plasma/plasma-meta -sddm -kwallet -browser-integration -display-manager" >> /etc/portage/package.use/plasmaMeta`
+`root ~ # echo "kde-plasma/plasma-meta -sddm -kwallet -browser-integration -display-manager" >> /etc/portage/package.use/plasmaMeta`
+
+`root ~ # echo "kde-frameworks/kio -kwallet" >> /etc/portage/package.use/kdeKio`
 
 or
 
-`USE="-sddm -kwallet -browser-integration -display-manager" emerge -av kde-plasma/plasma-meta`
+`root ~ # USE="-sddm -kwallet -browser-integration -display-manager" emerge -av kde-plasma/plasma-meta`
 
 
