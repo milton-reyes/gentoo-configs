@@ -1,0 +1,11 @@
+### sys-cluster/kubernetes will be masked
+
+Individual packages:
+
+`sys-cluster/kubeadm
+sys-cluster/kube-apiserver
+sys-cluster/kube-controller-manager
+sys-cluster/kubectl
+sys-cluster/kubelet
+sys-cluster/kube-proxy
+sys-cluster/kube-scheduler`
